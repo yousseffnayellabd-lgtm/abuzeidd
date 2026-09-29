@@ -1,0 +1,2187 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-ar="أبو زيد للسيارات | ABU ZEID AUTOMOTIVE"
+           data-en="Abu Zeid Automotive | ABU ZEID AUTOMOTIVE">
+        أبو زيد للسيارات | ABU ZEID AUTOMOTIVE
+    </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        :root {
+            --primary: #c5a059;
+            --primary-dark: #a3813c;
+            --bg-main: #fcfcfc;
+            --bg-card: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #eaeaea;
+            --header-bg: rgba(255, 255, 255, 0.92);
+            --shadow: 0 12px 35px rgba(0,0,0,0.06);
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #d4af37;
+            --primary-dark: #b89728;
+            --bg-main: #0d0d0d;
+            --bg-card: #171717;
+            --text-main: #f1f1f1;
+            --text-muted: #999999;
+            --border-color: #262626;
+            --header-bg: rgba(13, 13, 13, 0.92);
+            --shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;   
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.35s, color 0.35s;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-theme,
+        .btn-lang,
+        .menu-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 18px;
+        }
+
+        .btn-theme:hover,
+        .btn-lang:hover,
+        .menu-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero {
+            height: 85vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80')
+                no-repeat center center/cover;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            margin-top: 76px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 35px;
+            color: #dcdcdc;
+            font-weight: 400;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-main:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .brand-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            transition: all 0.4s ease;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .brand-card.hide {
+            display: none !important;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.12);
+        }
+
+        .logo-box {
+            width: 100px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .brand-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(15%);
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .brand-card:hover .brand-img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 15px;
+            outline: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .models-page {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-main);
+            z-index: 3000;
+            overflow-y: auto;
+            padding: 100px 20px 60px;
+            display: none;
+        }
+
+        .models-page.active {
+            display: block;
+        }
+
+        .models-header {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .models-header h2 {
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .models-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .close-models {
+            position: fixed;
+            top: 22px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 3100;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .close-models:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .models-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .model-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary);
+        }
+
+        .model-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .model-info {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .model-info h3 {
+            color: var(--text-main);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .model-info p {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .model-more-btn {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--primary);
+            color: #fff;
+            padding: 7px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card h3 {
+            font-size: 34px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .booking-form {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            margin-top: 60px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            margin-top: 6px;
+        }
+
+        .form-submit-btn {
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 25px;
+            width: 100%;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+        }
+
+        .form-submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .info-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 45px;
+            margin-top: 70px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-header-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            margin-top: 12px;
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+            transition: var(--transition);
+        }
+
+        .contact-action-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .facebook-link { background: #1877f2; }
+        .facebook-link:hover { background: #145dbf; }
+
+        .instagram-link { background: #d62976; }
+        .instagram-link:hover { background: #ad1f60; }
+
+        .tiktok-link { background: #111; }
+        .tiktok-link:hover { background: #000; }
+
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .branch-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            transition: var(--transition);
+        }
+
+        .branch-card h4 {
+            color: var(--primary);
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .branch-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .branch-card li {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 10px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        [dir="rtl"] .branch-card li {
+            padding-right: 15px;
+        }
+
+        [dir="rtl"] .branch-card li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+        }
+
+        [dir="ltr"] .branch-card li {
+            padding-left: 15px;
+        }
+
+        [dir="ltr"] .branch-card li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        [dir="ltr"] .whatsapp-float {
+            left: auto;
+            right: 30px;
+        }
+
+        [dir="ltr"] .scroll-top {
+            right: auto;
+            left: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                position: fixed;
+                top: 76px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 76px);
+                background: var(--bg-card);
+                flex-direction: column;
+                justify-content: center;
+                gap: 25px;
+                transition: right 0.4s ease;
+                border-left: 1px solid var(--border-color);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .models-page {
+                padding-top: 90px;
+            }
+
+            .models-header h2 {
+                font-size: 29px;
+            }
+
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .close-models {
+                top: 18px;
+                right: 18px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .info-section {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="models-page" id="modelsPage">
+
+        <button class="close-models"
+                onclick="closeModels()"
+                title="إغلاق"
+                aria-label="إغلاق">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <div class="models-header">
+
+            <h2 id="modelsTitle">BMW</h2>
+
+            <p id="modelsSubtitle"
+               data-ar="موديلات السيارات المتاحة"
+               data-en="Available Car Models">
+                موديلات السيارات المتاحة
+            </p>
+
+        </div>
+
+        <div class="models-grid" id="modelsGrid"></div>
+
+    </div>
+
+    <header>
+
+        <a href="#" class="logo">
+
+            <span data-ar="أبو زيد للسيارات"
+                  data-en="Abu Zeid Automotive">
+                أبو زيد للسيارات
+            </span>
+
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#brands"
+                   data-ar="التوكيلات"
+                   data-en="Brands"
+                   onclick="toggleMenu()">
+                    التوكيلات
+                </a>
+            </li>
+
+            <li>
+                <a href="#booking"
+                   data-ar="طلب حجز / استفسار"
+                   data-en="Book / Inquiry"
+                   onclick="toggleMenu()">
+                    طلب حجز / استفسار
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact"
+                   data-ar="الفروع وتواصل معنا"
+                   data-en="Contact & Branches"
+                   onclick="toggleMenu()">
+                    الفروع وتواصل معنا
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="controls">
+
+            <button class="btn-theme"
+                    id="themeToggle"
+                    onclick="toggleTheme()"
+                    aria-label="تغيير الوضع">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+            <button class="btn-lang"
+                    id="langToggle"
+                    onclick="toggleLang()">
+                EN
+            </button>
+
+            <button class="menu-toggle"
+                    onclick="toggleMenu()"
+                    aria-label="القائمة">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <section class="hero">
+
+        <h1 data-ar="وجهتك الأولى لأحدث السيارات العالمية"
+            data-en="Your First Destination for the Latest Global Cars">
+            وجهتك الأولى لأحدث السيارات العالمية
+        </h1>
+
+        <p data-ar="نقدم لك تشكيلة واسعة من أرقى التوكيلات العالمية بخيارات تمويل مرنة وخدمات ما بعد البيع المعتمدة."
+           data-en="We offer you a wide selection of the finest global agencies with flexible financing options and certified after-sales services.">
+            نقدم لك تشكيلة واسعة من أرقى التوكيلات العالمية بخيارات تمويل مرنة وخدمات ما بعد البيع المعتمدة.
+        </p>
+
+        <a href="#brands"
+           class="btn-main"
+           data-ar="استعرض التوكيلات الآن"
+           data-en="Browse Brands Now">
+            استعرض التوكيلات الآن
+        </a>
+
+    </section>
+
+    <div class="container" id="brands">
+
+        <div class="section-title">
+
+            <h2 data-ar="توكيلات السيارات المعتمدة"
+                data-en="Certified Car Agencies">
+                توكيلات السيارات المعتمدة
+            </h2>
+
+            <p data-ar="اختر من بين أشهر العلامات التجارية العالمية المتاحة لدينا"
+               data-en="Choose from the most famous international brands available with us">
+                اختر من بين أشهر العلامات التجارية العالمية المتاحة لدينا
+            </p>
+
+        </div>
+
+        <div class="search-box">
+
+            <input type="text"
+                   id="brandSearch"
+                   oninput="searchBrands()"
+                   placeholder="ابحث عن الماركة..."
+                   data-ar-placeholder="ابحث عن الماركة..."
+                   data-en-placeholder="Search for brand..."
+                   aria-label="البحث عن الماركة">
+
+        </div>
+
+        <div class="filter-tabs">
+
+            <button class="filter-btn active"
+                    onclick="filterBrands('all', this)"
+                    data-ar="الكل"
+                    data-en="All">
+                الكل
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterBrands('european', this)"
+                    data-ar="أوربي"
+                    data-en="European">
+                أوربي
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterBrands('swedish', this)"
+                    data-ar="سويدي"
+                    data-en="Swedish">
+                سويدي
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterBrands('japanese', this)"
+                    data-ar="ياباني"
+                    data-en="Japanese">
+                ياباني
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterBrands('chinese', this)"
+                    data-ar="صيني"
+                    data-en="Chinese">
+                صيني
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterBrands('korean', this)"
+                    data-ar="كوري"
+                    data-en="Korean">
+                كوري
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterBrands('malaysian', this)"
+                    data-ar="ماليزي"
+                    data-en="Malaysian">
+                ماليزي
+            </button>
+
+        </div>
+
+        <div class="brands-grid">
+
+            <div class="brand-card" data-category="european" onclick="openModels('Audi')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Audi-Logo_2016.svg" alt="Audi" class="brand-img">
+                </div>
+                <div class="brand-name">أودي - Audi</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('BMW')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://cdn.simpleicons.org/bmw" alt="BMW" class="brand-img">
+                </div>
+                <div class="brand-name">بي إم دبليو - BMW</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Volkswagen')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Volkswagen_logo_2019.svg" alt="Volkswagen" class="brand-img">
+                </div>
+                <div class="brand-name">فولكس فاجن - Volkswagen</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Opel')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/05/Opel-Logo.png" alt="Opel" class="brand-img">
+                </div>
+                <div class="brand-name">أوبل - Opel</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Mercedes')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes" class="brand-img">
+                </div>
+                <div class="brand-name">مرسيدس - Mercedes</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Fiat')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/03/Fiat-Logo.png" alt="Fiat" class="brand-img">
+                </div>
+                <div class="brand-name">فيات - Fiat</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Peugeot')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://thumb.wikimedia.org/wikipedia/ar/thumb/6/61/PEUGEOT.svg/960px-PEUGEOT.svg.png" alt="Peugeot" class="brand-img">
+                </div>
+                <div class="brand-name">بيجو - Peugeot</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Renault')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Renault_2021_Text.svg" alt="Renault" class="brand-img">
+                </div>
+                <div class="brand-name">رينو - Renault</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Citroen')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Citroen-logo-2009.png" alt="Citroen" class="brand-img">
+                </div>
+                <div class="brand-name">ستروين - Citroën</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Skoda')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/%C5%A0koda_nieuw.png" alt="Skoda" class="brand-img">
+                </div>
+                <div class="brand-name">سكودا - Skoda</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Seat')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/SEAT_logo_%282012%29.png" alt="Seat" class="brand-img">
+                </div>
+                <div class="brand-name">سيات - Seat</div>
+            </div>
+
+            <div class="brand-card" data-category="european" onclick="openModels('Cupra')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Cupra.svg/500px-Cupra.svg.png" alt="Cupra" class="brand-img">
+                </div>
+                <div class="brand-name">كوبرا - Cupra</div>
+            </div>
+
+            <div class="brand-card" data-category="swedish" onclick="openModels('Volvo')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/06/Volvo-Logo.png" alt="Volvo" class="brand-img">
+                </div>
+                <div class="brand-name">ڤولڤو - Volvo</div>
+            </div>
+
+            <div class="brand-card" data-category="japanese" onclick="openModels('Nissan')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Nissan-Logo.png" alt="Nissan" class="brand-img">
+                </div>
+                <div class="brand-name">نيسان - Nissan</div>
+            </div>
+
+            <div class="brand-card" data-category="japanese" onclick="openModels('Toyota')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Toyota-Logo.png" alt="Toyota" class="brand-img">
+                </div>
+                <div class="brand-name">تويوتا - Toyota</div>
+            </div>
+
+            <div class="brand-card" data-category="japanese" onclick="openModels('Suzuki')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://static.sayidaty.net/2024-11/387597.jpg" alt="Suzuki" class="brand-img">
+                </div>
+                <div class="brand-name">سوزوكي - Suzuki</div>
+            </div>
+
+            <div class="brand-card" data-category="japanese" onclick="openModels('Mazda')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://thumb.wikimedia.org/wikipedia/ar/thumb/d/de/Mazda.svg/3840px-Mazda.svg.png" alt="Mazda" class="brand-img">
+                </div>
+                <div class="brand-name">مازدا - Mazda</div>
+            </div>
+
+            <div class="brand-card" data-category="japanese" onclick="openModels('Subaru')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Subaru_logo_%28transparent%29.svg/500px-Subaru_logo_%28transparent%29.svg.png" alt="Subaru" class="brand-img">
+                </div>
+                <div class="brand-name">سوبارو - Subaru</div>
+            </div>
+
+            <div class="brand-card" data-category="korean" onclick="openModels('Hyundai')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Hyundai_Motor_Company_logo.svg" alt="Hyundai" class="brand-img">
+                </div>
+                <div class="brand-name">هيونداي - Hyundai</div>
+            </div>
+
+            <div class="brand-card" data-category="korean" onclick="openModels('Kia')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://hala-car.com/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/r/w/rwki0023-1.jpg" alt="Kia" class="brand-img">
+                </div>
+                <div class="brand-name">كيا - Kia</div>
+            </div>
+
+            <div class="brand-card" data-category="korean" onclick="openModels('KGM')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPH05lwEPDw2fNwhIPjsuZlqqy1EJkTSLRSPG-F39Q5Q&s=10" alt="KGM" class="brand-img">
+                </div>
+                <div class="brand-name">كي جي إم - KGM</div>
+            </div>
+
+            <div class="brand-card" data-category="malaysian" onclick="openModels('Proton')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://thumb.wikimedia.org/wikipedia/ar/thumb/3/37/PROTON.svg/960px-PROTON.svg.png" alt="Proton" class="brand-img">
+                </div>
+                <div class="brand-name">بروتون - Proton</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Kaiyi')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://auto-drives.com/wp-content/uploads/2024/01/Kaiyi-Logo.png" alt="Kaiyi" class="brand-img">
+                </div>
+                <div class="brand-name">كايي - Kaiyi</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('MG')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/09/MG-Logo.png" alt="MG" class="brand-img">
+                </div>
+                <div class="brand-name">إم جي - MG</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Deepal')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Deepal_global_logo.svg/3840px-Deepal_global_logo.svg.png" alt="Deepal" class="brand-img">
+                </div>
+                <div class="brand-name">ديبال - Deepal</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Chery')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/09/Chery-Logo.png" alt="Chery" class="brand-img">
+                </div>
+                <div class="brand-name">شيري - Chery</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('BYD')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/BYD_Auto_2022_logo.svg/960px-BYD_Auto_2022_logo.svg.png" alt="BYD" class="brand-img">
+                </div>
+                <div class="brand-name">بي واي دي - BYD</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Changan')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://striveme.com/img/article/19637/%D8%B4%D8%B1%D9%83%D8%A9_%D8%B4%D8%A7%D9%86%D8%AC%D8%A7%D9%86.jpg" alt="Changan" class="brand-img">
+                </div>
+                <div class="brand-name">شانجان - Changan</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('GAC')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcGM0NsT-Tps3sKh33A46p689VhUY9l4sXgG49a9iPkYbBTw-DIpK4Pj0&s=10" alt="GAC" class="brand-img">
+                </div>
+                <div class="brand-name">جي إيه سي - GAC</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Soueast')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://malekcars.com/assets/logos/large/soueast.jpg" alt="Soueast" class="brand-img">
+                </div>
+                <div class="brand-name">سويست - Soueast</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('BAIC')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwNtgBxh0PhbVeBBJxG5ZviOjcoZjlHP1lI8b7RcS0hSz5uM_RbYsmDO5w&s=10" alt="BAIC" class="brand-img">
+                </div>
+                <div class="brand-name">بايك - BAIC</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Haval')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiDaJv50YJZCSynv2ZNhR7twAKxOSoNimScvS6K4OGnofbBPK_o1jUDoU&s=10" alt="Haval" class="brand-img">
+                </div>
+                <div class="brand-name">هافال - Haval</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Geely')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://images.seeklogo.com/logo-png/46/2/geely-2023-logo-png_seeklogo-466890.png" alt="Geely" class="brand-img">
+                </div>
+                <div class="brand-name">جيلي - Geely</div>
+            </div>
+
+            <div class="brand-card" data-category="chinese" onclick="openModels('Jetour')" tabindex="0" role="button">
+                <div class="logo-box">
+                    <img src="https://images.seeklogo.com/logo-png/52/2/jetour-logo-png_seeklogo-524224.png" alt="Jetour" class="brand-img">
+                </div>
+                <div class="brand-name">جيتور - Jetour</div>
+            </div>
+
+        </div>
+
+        <div class="stats-section">
+
+            <div class="stat-card">
+                <h3>+15</h3>
+                <p data-ar="توكيل معتمد" data-en="Certified Agency">توكيل معتمد</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>+10,000</h3>
+                <p data-ar="عميل سعيد" data-en="Happy Client">عميل سعيد</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>+10</h3>
+                <p data-ar="فروع في خدمتك" data-en="Branches at your service">فروع في خدمتك</p>
+            </div>
+
+        </div>
+
+        <div class="booking-form" id="booking">
+
+            <div class="section-title" style="margin-bottom: 20px;">
+
+                <h2 data-ar="طلب حجز / استفسار" data-en="Book / Inquiry">
+                    طلب حجز / استفسار
+                </h2>
+
+                <p data-ar="أدخل بياناتك وسيتم التواصل معك في أقرب وقت"
+                   data-en="Enter your details and we will contact you as soon as possible">
+                    أدخل بياناتك وسيتم التواصل معك في أقرب وقت
+                </p>
+
+            </div>
+
+            <form onsubmit="submitBooking(event)">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label data-ar="الاسم بالكامل" data-en="Full Name">
+                            الاسم بالكامل
+                        </label>
+
+                        <input type="text"
+                               required
+                               placeholder="أدخل اسمك الكريم"
+                               data-ar-placeholder="أدخل اسمك الكريم"
+                               data-en-placeholder="Enter your full name">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label data-ar="رقم الهاتف" data-en="Phone Number">
+                            رقم الهاتف
+                        </label>
+
+                        <input type="tel"
+                               required
+                               placeholder="01210999986"
+                               data-ar-placeholder="01210999986"
+                               data-en-placeholder="01210999986">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label data-ar="الماركة المطلوبة" data-en="Preferred Brand">
+                            الماركة المطلوبة
+                        </label>
+
+                        <select id="brandSelect">
+
+                            <option value="Audi">أودي - Audi</option>
+                            <option value="BMW">بي إم دبليو - BMW</option>
+                            <option value="Volkswagen">فولكس فاجن - Volkswagen</option>
+                            <option value="Opel">أوبل - Opel</option>
+                            <option value="Mercedes">مرسيدس - Mercedes</option>
+                            <option value="Fiat">فيات - Fiat</option>
+                            <option value="Peugeot">بيجو - Peugeot</option>
+                            <option value="Renault">رينو - Renault</option>
+                            <option value="Citroen">ستروين - Citroën</option>
+                            <option value="Skoda">سكودا - Skoda</option>
+                            <option value="Seat">سيات - Seat</option>
+                            <option value="Cupra">كوبرا - Cupra</option>
+                            <option value="Volvo">ڤولڤو - Volvo</option>
+                            <option value="Nissan">نيسان - Nissan</option>
+                            <option value="Toyota">تويوتا - Toyota</option>
+                            <option value="Suzuki">سوزوكي - Suzuki</option>
+                            <option value="Mazda">مازدا - Mazda</option>
+                            <option value="Subaru">سوبارو - Subaru</option>
+                            <option value="Hyundai">هيونداي - Hyundai</option>
+                            <option value="Kia">كيا - Kia</option>
+                            <option value="KGM">كي جي إم - KGM</option>
+                            <option value="Proton">بروتون - Proton</option>
+                            <option value="Kaiyi">كايي - Kaiyi</option>
+                            <option value="MG">إم جي - MG</option>
+                            <option value="Deepal">ديبال - Deepal</option>
+                            <option value="Chery">شيري - Chery</option>
+                            <option value="BYD">بي واي دي - BYD</option>
+                            <option value="Changan">شانجان - Changan</option>
+                            <option value="GAC">جي إيه سي - GAC</option>
+                            <option value="Soueast">سويست - Soueast</option>
+                            <option value="BAIC">بايك - BAIC</option>
+                            <option value="Haval">هافال - Haval</option>
+                            <option value="Geely">جيلي - Geely</option>
+                            <option value="Jetour">جيتور - Jetour</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <button type="submit"
+                        class="form-submit-btn"
+                        data-ar="إرسال الطلب"
+                        data-en="Submit Request">
+                    إرسال الطلب
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="info-section" id="contact">
+
+            <div class="contact-header-info">
+
+                <div>
+
+                    <h3 data-ar="الخط الساخن" data-en="Hotline">
+                        الخط الساخن
+                    </h3>
+
+                    <a href="tel:15079" class="contact-action-btn">
+                        <i class="fa-solid fa-phone"></i>
+                        15079
+                    </a>
+
+                </div>
+
+                <div>
+
+                    <h3 data-ar="تواصل معنا" data-en="Contact Us">
+                        تواصل معنا
+                    </h3>
+
+                    <div class="social-links">
+
+                        <a href="https://www.facebook.com/share/1GLY1MK1MX/?mibextid=wwXIfr"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="social-link facebook-link">
+
+                            <i class="fa-brands fa-facebook-f"></i>
+                            Facebook
+
+                        </a>
+
+                        <a href="https://www.instagram.com/abuzeid_automotive?stkn=NjVrcmh6OHk4cm9i"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="social-link instagram-link">
+
+                            <i class="fa-brands fa-instagram"></i>
+                            Instagram
+
+                        </a>
+
+                        <a href="https://www.tiktok.com/@abu_zeid_automotive?_r=1&_t=ZS-99ySvdfkZfO"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="social-link tiktok-link">
+
+                            <i class="fa-brands fa-tiktok"></i>
+                            TikTok
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="section-title" style="margin-bottom: 25px;">
+
+                <h2 data-ar="فروعنا" data-en="Our Branches">
+                    فروعنا
+                </h2>
+
+                <p data-ar="يسعدنا استقبالكم في أقرب فرع لكم"
+                   data-en="We are happy to welcome you at your nearest branch">
+                    يسعدنا استقبالكم في أقرب فرع لكم
+                </p>
+
+            </div>
+
+            <div class="branches-grid">
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فروع مصر الجديدة
+                    </h4>
+                    <ul>
+                        <li>64 الخليفة المأمون - مصر الجديدة - روكسي</li>
+                        <li>28 ش عمار بن ياسر، النزهة، مصر الجديدة، أمام سور الكلية الحربية</li>
+                    </ul>
+                </div>
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فروع الجيزة
+                    </h4>
+                    <ul>
+                        <li>19 شارع وزارة الزراعة - نزلة كوبري الدقي - الجيزة</li>
+                        <li>144 شارع 26 يوليو، منطقة الصحفيين، حي العجوزة، بجوار مسرح البالون</li>
+                    </ul>
+                </div>
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فروع مدينة نصر
+                    </h4>
+                    <ul>
+                        <li>16 شارع كابول متفرع من مكرم عبيد أمام مول مصطفى السلاب مباشرة</li>
+                        <li>35 ذاكر حسين - مدينة نصر</li>
+                    </ul>
+                </div>
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فروع مدينتي
+                    </h4>
+                    <ul>
+                        <li>مدخل مدينتي 1 - بجوار بنزينة Chillout - طريق السويس</li>
+                    </ul>
+                </div>
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فرع كورنيش النيل
+                    </h4>
+                    <ul>
+                        <li>الساحل - 1351 كورنيش النيل</li>
+                    </ul>
+                </div>
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فرع الغردقة
+                    </h4>
+                    <ul>
+                        <li>بنزينة Mobil أمام الجونة</li>
+                    </ul>
+                </div>
+
+                <div class="branch-card">
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        فرع القطامية
+                    </h4>
+                    <ul>
+                        <li>وان قطامية، الطريق الدائري، أعلى نفق السخنة، ميدان محمد زكي</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/201210999986"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="whatsapp-float"
+       title="WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+    <button class="scroll-top"
+            id="scrollTopBtn"
+            onclick="scrollToTop()"
+            aria-label="العودة للأعلى">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+    <footer>
+
+        <p data-ar="جميع الحقوق محفوظة © 2026 أبو زيد للسيارات"
+           data-en="All Rights Reserved © 2026 Abu Zeid Automotive">
+
+            جميع الحقوق محفوظة © 2026 أبو زيد للسيارات
+
+        </p>
+
+    </footer>
+
+    <script>
+
+        let currentLang = 'ar';
+        let currentCategory = 'all';
+
+
+        const carModels = {
+
+            Audi: [
+                ["Audi A3", "https://ellaithy.com.eg/wp-content/uploads/2020/02/1760868971_203_64280_1.webp"],
+                ["Audi A4", "https://cdn.al-ain.com/lg/images/2025/7/23/62-142556-dead-cars-2026-2.jpeg"],
+                ["Audi Q5", "https://nar-dam.audi.com/adobe/assets/urn:aaid:aem:3a0a41c8-7f4c-4489-acae-a1987667e5a1/as/1200x675_All-New_2025_Audi-Q5_Asset.jpg?auto=webp"],            
+            ],
+
+            BMW: [
+                ["BMW X1", "https://media.ed.edmunds-media.com/bmw/x1/2026/oem/2026_bmw_x1_4dr-suv_m35i_fq_oem_1_1600.jpg"],
+                ["BMW X2", "https://cdn.bmwblog.com/wp-content/uploads/2024/02/2024-bmw-x2-m35i-alpine-white-40.jpg"],
+                ["BMW X3", "https://assets.pulseseo.net/2025/BMW/X3/2025BMWX3-exterior-01.jpg"],
+                ["BMW X4", "https://imgcdn.zigwheels.co.th/large/gallery/exterior/4/48/bmw-x4-front-angle-low-view-507315.jpg"],        
+                ["BMW X5", "https://www.bmwgroup.com/content/dam/grpw/websites/bmwgroup_com/News/2026/bmw-group-news-bmw-x5-image1-3x2.jpg"],
+                ["BMW X6", "https://i.gaw.to/vehicles/photos/40/41/404106-2026-bmw-x6.jpg"]            
+            ],
+
+            Volkswagen: [
+                ["Volkswagen Golf", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_NcKHUYg2rD_0nO2RIGNOPUNJ-HiaehiMH6vB0itGHRlIuCBJ5kXOH9c&s=10"],
+                ["Volkswagen Passat", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZGL7u9HNUTs4rSWaHuJSZ6QGMqERuxyHXbwZFcHhrDEoFDEyUrRXFdsS9&s=10"],
+                ["Volkswagen Tiguan", "https://egypt.yallamotor.com/_next/image?url=https%3A%2F%2Fymimg1.b8cdn.com%2Fresized%2Fcar_model%2F10591%2Fpictures%2F13160588%2Fwebp_listing_main_volkswagen-tiguan-exterior-04.webp&w=1920&q=75"]
+            ],
+
+            Opel: [
+                ["Opel Corsa", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwrkxp4lqLxuDnm3CooQmgEaR23mJExaUTSgO6ON5kF6wHzWvGMXID_4ZM&s=10"],
+                ["Opel Grandland", "https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/4885cdf126d7_f6ca6bda-c437-4be4-acb0-e04d71655364.jpeg"],
+                ["Opel Crossland", "https://i0.wp.com/motorsport.ie/wp-content/uploads/2026/08/Opel-Corsa-GSE-b.jpg?fit=1100%2C757&ssl=1"],
+                ["Opel FRONTERA", "https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/556af1f1c69d_400a7705-7fa2-4645-b5cc-a2f998772756.jpeg"],
+                ["Opel Mokka", "https://www.finalcd.sk/cms/upload/modely/novy_opel_mokka-28_7497.jpg"],         
+            
+            ],
+
+            Mercedes: [
+                ["Mercedes C-Class", "https://di-uploads-pod14.dealerinspire.com/downtownlamotorsmercedesbenz/uploads/2026/06/2027-C-SEDAN-BEV-FMG-004-FE-DR-1-.jpg"],
+                ["Mercedes E-Class", "https://media.ed.edmunds-media.com/mercedes-benz/e-class/2026/oem/2026_mercedes-benz_e-class_sedan_amg-e-53-hybrid_fq_oem_1_600.jpg"],
+                ["Mercedes GLE", "https://media.i-sgcm.com/article/articleImages/gallery/38666/38666_1.jpg"],
+            ],
+
+            Fiat: [
+                ["Fiat X500", "https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/aa20d34d82eb_423c86d5-9e8c-40b2-8ebf-046972fba61c.jpeg"],
+                ["Fiat Tipo", "https://www.fiat.com.eg/content/dam/fiat2023/cross/models/new-tipo/model/canva/1/mobile.jpg"]
+            ],
+
+            Peugeot: [
+               ["Peugeot 208", "https://back.prod.groupechopard.com/storage/media/2/8/1/2/1/7/conversions/G10Pm3D98r8XHaowa9F9fV7v5tYuzmMmQ6WHb0ME-cms_desktop.webp"],
+               ["Peugeot 3008", "https://media.almalnews.com/2025/11/41866/large/%D8%A8%D9%8A%D8%AC%D9%88-3008.jpg"],
+               ["Peugeot 5008", "https://www.peugeot-eg.com/content/dam/peugeot/master/b2c/our-range/showroom/5008/2024-04-white-label/5008-hybrid/5008-hybrid-december-window/MHEV_NOIRPERLA.jpg"]
+            ],
+
+            Renault: [
+                ["Renault Logan", "https://apiv2.autonews.ma/wp-content/uploads/2026/01/dacia-logan-2026-exterior-front-view-autonews-1.jpg"],
+                ["Renault Megane", "https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2000x1125/9fd2b8d5f7/megane-etech.webp/m/smart/filters:quality(70)"],
+                ["Renault Duster", "https://saudiauto.com.sa/wp-content/uploads/2026/01/Renault-Duster-2026-9.webp"]
+            ],
+
+            Citroen: [
+                ["Citroën C3", "https://cdn.motor1.com/images/mgl/0eKQWp/s3/citroen-c3-aircross-2024.jpg"],
+                ["Citroën C4", "https://www.citroen-eg.com/content/dam/citroen/egypt/c5page/CL250066.jpg?imwidth=768"],
+                ["Citroën C5 Aircross", "https://autozone-mag.com/storage/posts/media/2838/2025-citroen-c5-aircross-1-2048x1152.webp"]
+            ],
+
+            Skoda: [
+                ["Skoda Octavia", "https://cdn.eg.wedding/wp-content/uploads/2025/01/472558833_999779678856629_8305681961181929876_n-1200x800.jpg"],
+                ["Skoda Kodiaq", "https://images.carexpert.com.au/cms/v1/media/2023-09-skoda-kodiaq-sketches-3.jpg"]  
+            ],
+
+            Seat: [
+                ["Seat Ibiza", "https://biddex.com/_next/image?url=https%3A%2F%2Fcdn.biddex.com%2Fmedia%2F184342%2Fconversions%2Ft52v6QIwviLBxYWxkgLeSbBiHjWfDQ-metaV2hhdHNBcHAgSW1hZ2UgMjAyNi0wNy0yOCBhdCA1LjIzLjA1IFBNLmpwZWc%3D--external.webp&w=2048&q=75"],
+                ["Seat Leon", "https://www.egy-car.com/wp-content/uploads/2019/07/%D8%B3%D9%8A%D8%A7%D8%AA-%D9%84%D9%8A%D9%88%D9%86.jpg"],
+                ["Seat Ateca", "https://www.egy-car.com/wp-content/uploads/2020/06/%D8%B3%D9%8A%D8%A7%D8%AA-%D8%A7%D8%AA%D9%8A%D9%83%D8%A7-%D9%85%D9%88%D8%AF%D9%8A%D9%84-2021.jpg"]
+            ],
+
+            Cupra: [
+                ["Cupra Formentor", "https://www.cupra.com/content/dam/public/cupra-website/cars/formentor-new/slide-cards-center-click/cupra-formentor-vz5-front-design-details.jpg"],
+                ["Cupra Leon", "https://www.egy-car.com/wp-content/uploads/2020/04/Cupra-Leon-1.jpg"]
+            ],
+
+            Volvo: [
+                ["Volvo EX30", "https://egypt.yallamotor.com/_next/image?url=https%3A%2F%2Fymimg1.b8cdn.com%2Fresized%2Fcar_model%2F10610%2Fpictures%2F13333933%2Fwebp_listing_main_Volvo-EX30-Exterrior-02.webp&w=1920&q=75"],
+                ["Volvo EX90", "https://www.electrive.com/media/2022/11/volvo-ex90-2022-02-min.png.webp"],
+                ["Volvo XC40", "https://hips.hearstapps.com/mtg-prod/67521876c4a4980008764fe4/1-2025-volvo-xc40-front-view.jpg"],
+                ["Volvo XC60", "https://www.actualidadmotor.com/wp-content/uploads/2022/02/Volvo-XC60-2025-Portada-2048x1229.jpeg"],
+                ["Volvo XC90", "https://di-uploads-pod13.dealerinspire.com/volvocarscincinnatinorth/uploads/2025/04/Volvo-XC90-Ultra-2504.webp"]
+            
+            ],
+
+            Nissan: [
+                ["Nissan Sunny", "https://www.nissanguinea.com/media/uo4nmrmk/nissan-sunny-flow-2-0-2022-main-header-mobile.jpg"],
+                ["Nissan Sentra", "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/vehicles/sentra/product_code/product_version/new-assets/Sentra%20B%20Arabic.jpg.ximg.l_full_m.smart.jpg"],
+                ["Nissan Qashqai", "https://www.egy-car.com/wp-content/uploads/2019/07/Nissan-Qashqai-4.jpg"]
+            ],
+
+            Toyota: [
+                    ["Toyota Corolla", "https://www.egy-car.com/wp-content/uploads/2022/06/%D8%AA%D9%88%D9%8A%D9%88%D8%AA%D8%A7-%D9%83%D9%88%D8%B1%D9%88%D9%84%D8%A7-%D9%81%D9%8A%D8%B3-%D9%84%D9%8A%D9%81%D8%AA-2023.jpg"]            ],
+
+            Suzuki: [
+                ["Suzuki Swift", "https://suzukiegypt.net/wp-content/uploads/2022/11/featured-9.jpg"],
+                ["Suzuki Baleno", "https://hypmobility.b-cdn.net/images/product/Baleno/JQDQ3926.png"],
+                ["Suzuki Espresso", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThgb5KVzgR-F_--8Em0RLmDLpbx_yC7fYRpDspf1iAsQ&s=10"]
+            ],
+
+            Mazda: [
+             ["Mazda 3", "https://media.ed.edmunds-media.com/mazda/3/2026/oem/2026_mazda_3_sedan_25-s-carbon-edition_fq_oem_1_1600.jpg"],
+             ["Mazda CX-5", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXvEl6-tCQx3MKUcqKYFOyNa1ILT2cad6JhuaJ4MB1zcX1l6V-cXUnRk&s=10"],
+            ["Mazda CX-60", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sjzMwD1tf8cMsNsCgUZLAe4yw3KmKFEq51yWdOwp0jFFYY5dQ1fp0VY&s=10"]
+            ],
+
+            Subaru: [
+               ["Subaru Forester", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkSN4NzzB5B_lxQKHqP1pRwrv9tLolevwVRI-kBqD9nnGnvX1T4O0MNwU&s=10"],
+               ["Subaru CROSSTREK", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS69iLZuKCPsjPzjD9byqJJm1DG6ys8cG2zfvySEwiTfUJAEBIr2KSurVhF&s=10"]
+            ],
+
+            Hyundai: [
+                ["Hyundai Elantra", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQazWw9Fkv_tA0YI2WGZeUm2wq3-_j1_PCcvictAIX9zlEna7W0gwNXBFgv&s=10"],
+                ["Hyundai Tucson", "https://assets.hyundai.dk/media/cfbbbrjb/tucson_ice_oversigt_fb-linkcard.jpg?height=872&mode=crop&width=1550"],
+                ["Hyundai I3O", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmfJ20H_1bhHKt-_CadgZbEnXTRS6Ywq5Z0tAyVqrZA59JQ49bPbRM5G8&s=10"],
+                ["Hyundai ACCENT", "https://egypt.yallamotor.com/_next/image?url=https%3A%2F%2Fymimg1.b8cdn.com%2Fresized%2Fcar_model%2F12090%2Fpictures%2F15969412%2Fwebp_listing_main_2024-Hyundai-Accent-External-4.webp&w=1920&q=75"],
+                ["Hyundai VENUE", "https://hips.hearstapps.com/hmg-prod/images/5455c22d-0682-462c-bd26-1084b52e0c18.jpg?crop=0.6xw:0.507xh;0.239xw,0.306xh&resize=1200:*"],
+                ["Hyundai Santa Fe", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UjheVluGLOKpAYApSjZVK_CBHC_rlZaef2asshbgLMD9U-eTGX_mLuA&s=10"]
+            ],
+
+            Kia: [
+              ["Kia Sportage", "https://www.cairo24.com/UploadCache/libfiles/166/7/600x338o/99.jpg"],
+              ["Kia Carnival", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLTmpM-axvsIxNkH67EltqUI0EQxmpWO62F13dkaSuoKjwGWRbwC0YomDG&s=10"],
+              ["Kia K4", "https://en.arabgt.com/wp-content/uploads/2024/08/the-cheapest-kia-in-the-american-market-unveiled-2.jpg"],
+              ["Kia Seltos", "https://carbike360-ae.s3.me-central-1.amazonaws.com/2025_Kia_Seltos_Review_007a731309.jpg"],
+              ["Kia Sorento", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZMAR-MSk49umi_jKeI-IE-m5PNAit47T6-IDzBYh0xA&s=10"]
+            ],
+
+            KGM: [
+              ["KGM Torres", "https://egyspeed.net/wp-content/uploads/2026/05/KGM-New-Torres-Facelift-2027-01.webp"],
+              ["KGM Actyon", "https://www.topgear.com/sites/default/files/cars-car/image/2025/01/1-KGM-Actyon-review-2025-UK.jpg?w=1280&h=720"],
+              ["KGM Tivoli", "https://imgcdn.sayaratbay.com/large/gallery/exterior/129/2291/kgm-tivoli-front-angle-low-view-688404.jpg"],
+              ["KGM Korando", "https://yccmotorstore.co.uk/wp-content/uploads/2025/04/kgm-korando-overview-history-1024x719.webp"]
+            ],
+
+            Proton: [
+                ["Proton Saga", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITjACFWKenE158rOIlKxA67D5qO3zcyhpen1Y7WafOg&s=10"]                   ],  
+
+            Kaiyi: [
+              ["Kaiyi X3 Pro", "https://media.almalnews.com/2026/6/large/2955873276883202606060520112011.jpg"],
+              ["Kaiyi E5", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmOnAU6ZfZo-Be3doi9G-y165z5d9lCCv9jKCO_l0XicoZsjyP-5Hnu8k&s=10"]
+            ],
+
+            MG: [
+               ["MG 5", "https://s3.eu-central-1.amazonaws.com/v3-ncg.motory.com/vehicle-new/800x600/l-1742204455.8218-67d7ee27c8a08_outbound.webp"],
+               ["MG 7", "https://blog.dubizzle.com.eg/wp-content/uploads/2025/03/MG7-1.png"],
+               ["MG ZS", "https://images.netdirector.co.uk/gforces-auto/image/upload/q_auto,c_fill,f_auto,fl_lossy,w_1920,h_1080/auto-client/becbc82e70e56d3323a7084675de8ffd/2025_07_18_paulrigby_mg_nvd_new_mg_zs_hybrid_banner_desktop.jpg"],
+               ["MG HS", "https://d3jvxfsgjxj1vz.cloudfront.net/news/wp-content/uploads/2025/01/08121807/2025-mg-hs-launched-in-the-uae-5.webp"]
+            ],
+
+            Deepal: [
+                ["Deepal G318", "https://deepal.ma/_next/image?url=%2Fimages%2Fg318%2Fexterior%2FG318_Grey_EX_Front%20_Right70.jpg&w=3840&q=75"],
+                ["Deepal S07", "https://deepaloman.com/_next/image?url=%2Fassets%2Fs07%2FS07.jpg&w=3840&q=75"],
+                ["Deepal S05", "https://deepal-eg.com/media/products/S05_Car_Model_Page_1_-_2.3___1_SGmTjAz.png"]  
+          ],
+
+            Chery: [
+                ["Chery Tiggo 4 PRO", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Chery Tiggo 7 PRO", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Chery Tiggo 7 PRO MAX", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Chery Tiggo 8", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],  
+                ["Chery Tiggo 8 PRO MAX", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Chery Arrizo 5 ", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Chery Arrizo 6 GT", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Chery Arrizo 8", "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            BYD: [
+                ["BYD f-3", "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1000&q=80"],
+                ["BYD Dolphin", "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1000&q=80"],
+                ["BYD Ti7", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["BYD Atto 8", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["BYD Sealion", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            Changan: [
+                ["Changan CS35 Plus", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Changan CS55 Plus", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["Changan CS75 Plus", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["Changan Eado ", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["Changan UNI-V ", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["Changan UNI-T", "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            GAC: [
+                ["GAC GS4 MAX", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["GAC Empow", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["GAC Emzom", "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            Soueast: [
+                ["Soueast S05", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Soueast S06", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Soueast S07", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Soueast S08", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Soueast S09", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            BAIC: [
+                ["BAIC X35", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["BAIC X55", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["BAIC X7", "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            Haval: [
+                ["Haval Jolion", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Haval H6", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["Haval H9", "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            Geely: [
+                ["Geely Coolray", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Geely Emgrand", "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1000&q=80"],
+                ["Geely Monjaro", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"]
+            ],
+
+            Jetour: [
+                ["Jetour X70", "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+                ["Jetour X90", "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"],
+                ["Jetour Dashing", "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"]
+            ]
+
+        };
+
+
+        function openModels(brand) {
+
+            const page = document.getElementById("modelsPage");
+            const title = document.getElementById("modelsTitle");
+            const grid = document.getElementById("modelsGrid");
+
+            title.textContent = brand;
+
+            grid.innerHTML = "";
+
+            const models = carModels[brand] || [];
+
+            if (models.length === 0) {
+
+                grid.innerHTML = `
+                    <div class="model-card">
+                        <div class="model-info">
+                            <h3>${brand}</h3>
+                            <p>${currentLang === 'ar' ? 'سيتم إضافة الموديلات قريبًا' : 'Models will be added soon'}</p>
+                        </div>
+                    </div>
+                `;
+
+            } else {
+
+                models.forEach(model => {
+
+                    const card = document.createElement("div");
+
+                    card.className = "model-card";
+
+                    card.innerHTML = `
+
+                        <img
+                            src="${model[1]}"
+                            alt="${model[0]}"
+                            loading="lazy"
+                            onerror="this.style.display='none';"
+                        >
+
+                        <div class="model-info">
+
+                            <h3>${model[0]}</h3>
+
+                            <p>
+                                أبو زيد للسيارات
+                            </p>
+
+                            <a
+                                href="#booking"
+                                class="model-more-btn"
+                                onclick="inquireModel('${brand}', '${model[0].replace(/'/g, "\\'")}')"
+                            >
+                                ${currentLang === 'ar' ? 'استفسر عن السيارة' : 'Inquire About Car'}
+                            </a>
+
+                        </div>
+                    `;
+
+                    grid.appendChild(card);
+
+                });
+
+            }
+
+            page.classList.add("active");
+            document.body.style.overflow = "hidden";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "auto"
+            });
+
+        }
+
+
+        function closeModels() {
+
+            const page = document.getElementById("modelsPage");
+
+            page.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        function inquireModel(brand, model) {
+
+            const select = document.getElementById("brandSelect");
+
+            if (select) {
+                select.value = brand;
+            }
+
+            closeModels();
+
+            setTimeout(() => {
+
+                const booking = document.getElementById("booking");
+
+                if (booking) {
+                    booking.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+
+            }, 50);
+
+        }
+
+
+        function submitBooking(event) {
+
+            event.preventDefault();
+
+            const message =
+                currentLang === 'ar'
+                    ? 'تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.'
+                    : 'Your request has been submitted successfully! We will contact you soon.';
+
+            alert(message);
+
+        }
+
+
+        function toggleTheme() {
+
+            const html = document.documentElement;
+
+            const themeBtnIcon =
+                document.querySelector('#themeToggle i');
+
+            if (html.getAttribute('data-theme') === 'dark') {
+
+                html.removeAttribute('data-theme');
+
+                themeBtnIcon.className =
+                    'fa-solid fa-moon';
+
+            } else {
+
+                html.setAttribute('data-theme', 'dark');
+
+                themeBtnIcon.className =
+                    'fa-solid fa-sun';
+
+            }
+
+        }
+
+
+        function toggleLang() {
+
+            const html = document.documentElement;
+
+            const langBtn =
+                document.getElementById('langToggle');
+
+            currentLang =
+                currentLang === 'ar'
+                    ? 'en'
+                    : 'ar';
+
+            html.setAttribute('lang', currentLang);
+
+            html.setAttribute(
+                'dir',
+                currentLang === 'ar'
+                    ? 'rtl'
+                    : 'ltr'
+            );
+
+            langBtn.textContent =
+                currentLang === 'ar'
+                    ? 'EN'
+                    : 'AR';
+
+
+            document.querySelectorAll('[data-ar]')
+                .forEach(el => {
+
+                    const text =
+                        el.getAttribute(`data-${currentLang}`);
+
+                    if (text) {
+
+                        if (el.tagName.toLowerCase() === 'title') {
+                            el.textContent = text;
+                        } else {
+                            el.textContent = text;
+                        }
+
+                    }
+
+                });
+
+
+            document.querySelectorAll('[data-ar-placeholder]')
+                .forEach(el => {
+
+                    const placeholder =
+                        el.getAttribute(
+                            `data-${currentLang}-placeholder`
+                        );
+
+                    if (placeholder) {
+                        el.placeholder = placeholder;
+                    }
+
+                });
+
+            updateBrandOptions();
+
+            if (document.getElementById("modelsPage").classList.contains("active")) {
+
+                const brand = document.getElementById("modelsTitle").textContent;
+
+                openModels(brand);
+
+            }
+
+        }
+
+
+        function updateBrandOptions() {
+
+            const select = document.getElementById('brandSelect');
+
+            if (!select) return;
+
+            const arabicNames = {
+                Audi: 'أودي',
+                BMW: 'بي إم دبليو',
+                Volkswagen: 'فولكس فاجن',
+                Opel: 'أوبل',
+                Mercedes: 'مرسيدس',
+                Fiat: 'فيات',
+                Peugeot: 'بيجو',
+                Renault: 'رينو',
+                Citroen: 'ستروين',
+                Skoda: 'سكودا',
+                Seat: 'سيات',
+                Cupra: 'كوبرا',
+                Volvo: 'ڤولڤو',
+                Nissan: 'نيسان',
+                Toyota: 'تويوتا',
+                Suzuki: 'سوزوكي',
+                Mazda: 'مازدا',
+                Subaru: 'سوبارو',
+                Hyundai: 'هيونداي',
+                Kia: 'كيا',
+                KGM: 'كي جي إم',
+                Proton: 'بروتون',
+                Kaiyi: 'كايي',
+                MG: 'إم جي',
+                Deepal: 'ديبال',
+                Chery: 'شيري',
+                BYD: 'بي واي دي',
+                Changan: 'شانجان',
+                GAC: 'جي إيه سي',
+                Soueast: 'سويست',
+                BAIC: 'بايك',
+                Haval: 'هافال',
+                Geely: 'جيلي',
+                Jetour: 'جيتور'
+            };
+
+            Array.from(select.options).forEach(option => {
+
+                const value = option.value;
+
+                option.textContent =
+                    currentLang === 'ar'
+                        ? `${arabicNames[value] || value} - ${value}`
+                        : value;
+
+            });
+
+        }
+
+
+        function toggleMenu() {
+
+            const navLinks =
+                document.getElementById('navLinks');
+
+            navLinks.classList.toggle('active');
+
+        }
+
+
+        function filterBrands(category, btn) {
+
+            currentCategory = category;
+
+            document.querySelectorAll('.filter-btn')
+                .forEach(b =>
+                    b.classList.remove('active')
+                );
+
+            btn.classList.add('active');
+
+            applyBrandFilters();
+
+        }
+
+
+        function searchBrands() {
+
+            applyBrandFilters();
+
+        }
+
+
+        function applyBrandFilters() {
+
+            const query =
+                document
+                    .getElementById('brandSearch')
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+            const cards =
+                document.querySelectorAll('.brand-card');
+
+            cards.forEach(card => {
+
+                const name =
+                    card
+                        .querySelector('.brand-name')
+                        .textContent
+                        .toLowerCase();
+
+                const categoryMatch =
+                    currentCategory === 'all' ||
+                    card.getAttribute('data-category') === currentCategory;
+
+                const searchMatch =
+                    !query ||
+                    name.includes(query);
+
+                if (categoryMatch && searchMatch) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener('scroll', function() {
+
+            const scrollBtn =
+                document.getElementById('scrollTopBtn');
+
+            if (
+                window.scrollY > 300
+            ) {
+
+                scrollBtn.classList.add('visible');
+
+            } else {
+
+                scrollBtn.classList.remove('visible');
+
+            }
+
+        });
+
+
+        function scrollToTop() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+                closeModels();
+            }
+
+            if (
+                event.key === "Enter" &&
+                document.activeElement.classList.contains("brand-card")
+            ) {
+
+                document.activeElement.click();
+
+            }
+
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            updateBrandOptions();
+            applyBrandFilters();
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
