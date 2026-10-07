@@ -681,7 +681,7 @@
             font-size: 22px;
         }
 
-        /* 🟢 قسم بروشورات السيارات (PDF) */
+        /* 🟢 قسم بروشورات السيارات (PDF - 3 في كل سطر بحجم صغير وأنيق) */
         .brochures-section {
             margin-top: 80px;
             padding-top: 40px;
@@ -727,7 +727,7 @@
 
         .brochure-info i {
             font-size: 28px;
-            color: #e74c3c;
+            color: #e74c3c; /* لون أيقونة الـ PDF */
         }
 
         .brochure-title {
@@ -1038,6 +1038,7 @@
                 <p data-ar="تفضل بزيارة أقرب فرع إليك أو تواصل معنا" data-en="Visit your nearest branch or contact us">تفضل بزيارة أقرب فرع إليك أو تواصل معنا</p>
             </div>
 
+            <!-- الهوت لاين -->
             <div class="hotline-banner">
                 <i class="fa-solid fa-headset"></i>
                 <span data-ar="الخط الساخن: 15079" data-en="Hotline: 15079">الخط الساخن: 15079</span>
@@ -1157,7 +1158,7 @@
             </div>
         </div>
 
-        <!-- قسم بروشورات السيارات (PDF) -->
+        <!-- 🟢 قسم بروشورات السيارات (PDF) -->
         <div class="brochures-section" id="brochuresSection">
             <div class="section-title">
                 <h2 data-ar="بروشورات السيارات" data-en="Car Brochures">بروشورات السيارات</h2>
@@ -1165,6 +1166,7 @@
             </div>
 
             <div class="brochures-grid">
+                <!-- بروشور 1 -->
                 <div class="brochure-card">
                     <div class="brochure-info">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -1175,6 +1177,7 @@
                     </a>
                 </div>
 
+                <!-- بروشور 2 -->
                 <div class="brochure-card">
                     <div class="brochure-info">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -1185,6 +1188,7 @@
                     </a>
                 </div>
 
+                <!-- بروشور 3 -->
                 <div class="brochure-card">
                     <div class="brochure-info">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -1195,6 +1199,7 @@
                     </a>
                 </div>
 
+                <!-- بروشور 4 -->
                 <div class="brochure-card">
                     <div class="brochure-info">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -1205,6 +1210,7 @@
                     </a>
                 </div>
 
+                <!-- بروشور 5 -->
                 <div class="brochure-card">
                     <div class="brochure-info">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -1215,6 +1221,7 @@
                     </a>
                 </div>
 
+                <!-- بروشور 6 -->
                 <div class="brochure-card">
                     <div class="brochure-info">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -1232,6 +1239,7 @@
         <p>© 2026 أبو زيد للسيارات. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <!-- الدوال البرمجية -->
     <script>
         const carModelsData = {
             Audi: [
@@ -1418,7 +1426,7 @@
              ["Geely Monjaro", "https://i0.wp.com/autogroup.am/wp-content/uploads/2018/07/1-2.jpg?resize=876%2C535&ssl=1", "2,400,000 ج.م", "480,000 ج.م"]
             ],
             Jetour: [
-             ["Jetour X70", "https://zautoshow.com/wp-content/uploads/2025/08/%D8%AC%D9%8A%D8%AA%D9%88%D8%B1-X70-2026.webp", "1,350,000 ج.م", "320,000 ج.م"],
+             ["Jetour X70", "https://zautoshow.com/wp-content/uploads/2025/08/%D8%AC%D9%8A%D8%AA%D9%88%D8%B1-X70-2026.webp", "1,350,000 ج.م", "270,000 ج.م"],
              ["Jetour X90", "https://jetouregypt.com/models/x90-plus-1-6t/new_assets/images/1.jpg", "1,600,000 ج.م", "320,000 ج.م"],
              ["Jetour Dashing", "https://evmotors.com/wp-content/uploads/2025/06/Jetour-Dashing-_thumb_1.jpg", "1,500,000 ج.م", "300,000 ج.م"]
             ]
@@ -1516,21 +1524,17 @@
             titleEl.innerText = currentLang === 'en' ? titleEl.getAttribute('data-en') : titleEl.getAttribute('data-ar');
         }
 
-        // 🟢 دالة إرسال الطلب متطابقة 100% مع متغيرات القالب الخاص بك في EmailJS
         function sendOrderEmail(event) {
             event.preventDefault();
 
             const templateParams = {
-                name: document.getElementById('clientName').value,
-                time: new Date().toLocaleString(),
                 client_name: document.getElementById('clientName').value,
                 client_phone: document.getElementById('clientPhone').value,
                 car_model: document.getElementById('carModel').value,
-                notes: document.getElementById('clientNotes').value,
-                email: "youssefnayellabd@gmail.com"
+                notes: document.getElementById('clientNotes').value
             };
 
-            emailjs.send('service_evsoisy', 'template_ozyld7d', templateParams)
+            emailjs.send('service_56zr0fi', 'template_g1jbo1p', templateParams)
                 .then(function(response) {
                     alert('تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
                     document.getElementById('orderForm').reset();
